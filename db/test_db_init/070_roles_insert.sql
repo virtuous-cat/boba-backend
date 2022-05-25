@@ -31,9 +31,9 @@ VALUES
     ((SELECT id FROM realms WHERE slug = 'twisted-minds'),
      (SELECT id FROM users WHERE username = 'bobatan'), 
      (SELECT id FROM roles WHERE name = 'The Owner')),
-    ((SELECT id FROM realms WHERE slug = 'uwu'),
-     (SELECT id FROM users WHERE username = 'bobatan'), 
-     (SELECT id FROM roles WHERE name = 'The Memester')),
+    -- ((SELECT id FROM realms WHERE slug = 'uwu'),
+    --  (SELECT id FROM users WHERE username = 'bobatan'), 
+    --  (SELECT id FROM roles WHERE name = 'The Owner')),
     ((SELECT id FROM realms WHERE slug = 'twisted-minds'),
      (SELECT id FROM users WHERE username = 'bobatan'),
      (SELECT id FROM roles WHERE name = 'GoreMaster5000')),
@@ -46,6 +46,12 @@ VALUES
     ((SELECT id FROM realms WHERE slug = 'twisted-minds'),
      (SELECT id FROM users WHERE username = 'oncest5evah'), 
      (SELECT id FROM roles WHERE name = 'GoreMaster5000'));
+
+INSERT INTO account_invites(realm_id, inviter, nonce, invitee_email, duration)
+  VALUES
+  ((SELECT id FROM realms WHERE slug = 'uwu'),
+  (SELECT id FROM users WHERE username = 'The Zodiac Killer'),
+  'testnonce', 'test@test.com', INTERVAL '1 WEEK');
 
 INSERT INTO content_warnings(warning)
 VALUES

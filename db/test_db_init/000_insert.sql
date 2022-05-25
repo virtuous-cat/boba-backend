@@ -71,7 +71,7 @@ VALUES
 INSERT INTO realm_users(realm_id, user_id)
 VALUES
     ((SELECT id FROM realms WHERE slug = 'twisted-minds'), (SELECT id FROM users WHERE username = 'bobatan')),
-    ((SELECT id FROM realms WHERE slug = 'uwu'), (SELECT id FROM users WHERE username = 'bobatan')),
+    -- ((SELECT id FROM realms WHERE slug = 'uwu'), (SELECT id FROM users WHERE username = 'bobatan')),
     ((SELECT id FROM realms WHERE slug = 'twisted-minds'), (SELECT id FROM users WHERE username = 'SexyDaddy69')),
     ((SELECT id FROM realms WHERE slug = 'twisted-minds'), (SELECT id FROM users WHERE username = 'oncest5evah')),
     ((SELECT id FROM realms WHERE slug = 'uwu'), (SELECT id FROM users WHERE username = 'The Zodiac Killer'));
