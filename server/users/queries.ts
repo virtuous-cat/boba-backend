@@ -140,12 +140,17 @@ export const createFirebaseUser = async ({
   password: string;
 }): Promise<auth.UserRecord> => {
   try {
-    const newUser = await firebaseAuth.auth().createUser({
-      email,
-      password,
-    });
+    // const newUser = await firebaseAuth.auth().createUser({
+    //   email,
+    //   password,
+    // });
+    const newUser = {
+      uid: "new_user_firebase_id",
+      metadata: { creationTime: "2022-05-12 19:10:25" },
+    };
     const uid = newUser.uid;
     log(`Created new firebase user with uid ${uid}`);
+    // @ts-ignore
     return newUser;
   } catch (e) {
     error(`Error creating firebase user:`);
