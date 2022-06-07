@@ -51,7 +51,10 @@ INSERT INTO account_invites(realm_id, inviter, nonce, invitee_email, duration)
   VALUES
   ((SELECT id FROM realms WHERE slug = 'uwu'),
   (SELECT id FROM users WHERE username = 'The Zodiac Killer'),
-  'testnonce', 'test@test.com', INTERVAL '1 WEEK');
+  'testnonce', 'test@test.com', INTERVAL '1 WEEK'),
+  ((SELECT id FROM realms WHERE slug = 'uwu'),
+  (SELECT id FROM users WHERE username = 'The Zodiac Killer'),
+  'noemailnonce', '', INTERVAL '1 WEEK');
 
 INSERT INTO content_warnings(warning)
 VALUES
